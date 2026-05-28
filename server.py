@@ -148,7 +148,7 @@ def execute_banking_logic(
                 return (
                     f"[AIVA IVR Dialogue]\n"
                     f"\"For your safety, the card ending in {card_masked} has been permanently deactivated due to a confirmed fraud dispute. A replacement card is on its way. Let me connect you directly with a representative for further help.\"\n\n"
-                    f"[SYSTEM_LOG] Account: {account_number} | Status: Hot-Carded / Deactivated (ISO 8583 Code: 43 - Stolen Card)"
+                    f"[SYSTEM_LOG] Account: {account_number} | Status: Hot-Carded / Deactivated (Stolen Card)"
                 )
             
             # Retrieve failed unblock attempts to see if already locked out
@@ -157,13 +157,13 @@ def execute_banking_logic(
                 return (
                     f"[AIVA IVR Dialogue]\n"
                     f"\"For your security, we've locked unblocking attempts on this card because the answer didn't match our records after multiple attempts. To help you get this resolved, let's get you connected to a customer service specialist right away. Please hold on.\"\n\n"
-                    f"[SYSTEM_LOG] Account: {account_number} | Card ending in {card_masked} LOCKED OUT (ISO 8583 Code: 38 - PIN Try Limit Exceeded)"
+                    f"[SYSTEM_LOG] Account: {account_number} | Card ending in {card_masked} LOCKED OUT (PIN Try Limit Exceeded)"
                 )
                 
             return (
                 f"[AIVA IVR Dialogue]\n"
                 f"\"I see your card ending in {card_masked} is currently blocked for security. I can easily unblock this for you. First, let's verify your identity. Could you please tell me: {security_question}?\"\n\n"
-                f"[SYSTEM_LOG] Account: {account_number} | Status: Blocked (ISO 8583 Code: 57 - Restricted Card) | Attempt: {failed_attempts}/3"
+                f"[SYSTEM_LOG] Account: {account_number} | Status: Blocked (Restricted Card) | Attempt: {failed_attempts}/3"
             )
             
         if not transaction_id:
@@ -202,21 +202,21 @@ def execute_banking_logic(
                 f"Failure Reason : {reason}\n\n"
                 f"[AIVA IVR Dialogue]\n"
                 f"\"I found a failed transaction of ${amt:,.2f} at {merchant} because it exceeded your daily credit limit. To help you with this, I can temporarily increase your credit limit so you can complete your purchase. Would you like me to do that?\"\n\n"
-                f"[SYSTEM_LOG] Transaction ID: {t_id} | Decline Reason: {reason} (ISO 8583 Code: 51 - Insufficient Funds)"
+                f"[SYSTEM_LOG] Transaction ID: {t_id} | Decline Reason: {reason} (Insufficient Funds)"
             )
         elif flagged:
             response_str += (
                 f"Flagged State  : FLAGGED SUSPICIOUS BY FRAUD DETECTION\n\n"
                 f"[AIVA IVR Dialogue]\n"
                 f"\"I see a charge of ${amt:,.2f} at {merchant} on your statement that has been flagged as suspicious. Did you authorize this purchase?\"\n\n"
-                f"[SYSTEM_LOG] Transaction ID: {t_id} | Status: Flagged Suspicious (ISO 8583 Code: 34 - Suspected Fraud)"
+                f"[SYSTEM_LOG] Transaction ID: {t_id} | Status: Flagged Suspicious (Suspected Fraud)"
             )
         else:
             response_str += (
                 f"Flagged State  : Normal / Safe\n\n"
                 f"[AIVA IVR Dialogue]\n"
                 f"\"I see that your transaction of ${amt:,.2f} at {merchant} was processed successfully. Do you have a question about this transaction?\"\n\n"
-                f"[SYSTEM_LOG] Transaction ID: {t_id} | Status: Approved (ISO 8583 Code: 00 - Approved)"
+                f"[SYSTEM_LOG] Transaction ID: {t_id} | Status: Approved (Approved)"
             )
         return response_str
 
@@ -228,10 +228,9 @@ def execute_banking_logic(
         
         if card_status == "Blocked" or failed_attempts >= 3 or has_fraud_compromise:
             reason_str = "permanently deactivated" if has_fraud_compromise else "temporarily locked out" if failed_attempts >= 3 else "restricted"
-            iso_code = "43" if has_fraud_compromise else "38" if failed_attempts >= 3 else "57"
             return (
                 f"Error: I cannot process a credit limit increase because there is currently a security hold on this card. Let's get the security hold resolved first.\n\n"
-                f"[SYSTEM_LOG] Request Denied | Card Status: {card_status} ({reason_str}) (ISO 8583 Code: {iso_code})"
+                f"[SYSTEM_LOG] Request Denied | Card Status: {card_status} ({reason_str})"
             )
 
         if not transaction_id:
@@ -277,7 +276,7 @@ def execute_banking_logic(
         return (
             f"[AIVA IVR Dialogue]\n"
             f"\"Your limit increase has been approved! The daily limit for your card ending in {card_masked} has been temporarily increased to $2,000.00. You can now retry your purchase of ${target_txn.get('amount'):,.2f} at {target_txn.get('merchant')}. Is there anything else I can do for you today?\"\n\n"
-            f"[SYSTEM_LOG] Daily credit limit increased to $2,000.00 | Account: {account_number} (ISO 8583 Code: 00 - Decline Code 51 Resolved)"
+            f"[SYSTEM_LOG] Daily credit limit increased to $2,000.00 | Account: {account_number} (Declined Transaction Resolved)"
         )
 
     # --- ACTION: unblock_card (Blocked Card flow) ---
@@ -286,7 +285,7 @@ def execute_banking_logic(
             return (
                 f"[AIVA IVR Dialogue]\n"
                 f"\"Your credit card ending in {card_masked} is already active and ready for use.\"\n\n"
-                f"[SYSTEM_LOG] Unblock Request Ignored | Card is already Active (ISO 8583 Code: 00)"
+                f"[SYSTEM_LOG] Unblock Request Ignored | Card is already Active"
             )
             
         if not security_answer:
@@ -300,7 +299,7 @@ def execute_banking_logic(
         if has_fraud_compromise:
             return (
                 f"Error: This card has been permanently deactivated due to a reported fraud dispute. We cannot unblock this card. A replacement card is already on its way. Let me connect you with a representative for further assistance.\n\n"
-                f"[SYSTEM_LOG] Unblock Denied | Card is Hot-Carded/Compromised (ISO 8583 Code: 43 - Stolen Card)"
+                f"[SYSTEM_LOG] Unblock Denied | Card is Hot-Carded/Compromised (Stolen Card)"
             )
             
         # Check for 3-strike lockout rule
@@ -308,7 +307,7 @@ def execute_banking_logic(
         if failed_attempts >= 3:
             return (
                 f"Error: For your security, we've locked self-service unblocking on this card due to multiple failed verification attempts. Let me connect you directly to a representative to assist you.\n\n"
-                f"[SYSTEM_LOG] Unblock Locked Out | Attempt Limit Exceeded (3/3) (ISO 8583 Code: 38 - PIN Try Limit Exceeded)"
+                f"[SYSTEM_LOG] Unblock Locked Out | Attempt Limit Exceeded (3/3) (PIN Try Limit Exceeded)"
             )
             
         expected_answer = card_details.get("security_answer", "").strip().lower()
@@ -333,7 +332,7 @@ def execute_banking_logic(
             return (
                 f"[AIVA IVR Dialogue]\n"
                 f"\"Perfect! That matches our records. Your credit card ending in {card_masked} has been successfully unblocked and is active for immediate use. You are good to go!\"\n\n"
-                f"[SYSTEM_LOG] Card ending in {card_masked} set to Active | Account: {account_number} (ISO 8583 Code: 00 - Approved)"
+                f"[SYSTEM_LOG] Card ending in {card_masked} set to Active | Account: {account_number} (Approved)"
             )
         else:
             # Log failed attempt
@@ -351,12 +350,12 @@ def execute_banking_logic(
             if new_failed_count >= 3:
                 return (
                     f"Error: I'm sorry, that answer doesn't match our records. For your security, unblocking has been locked due to too many failed attempts. Let's get you connected to a representative right away to verify your identity.\n\n"
-                    f"[SYSTEM_LOG] Security verification failed. Attempts: {new_failed_count}/3. Lockout triggered (ISO 8583 Code: 38 - PIN Try Limit Exceeded)"
+                    f"[SYSTEM_LOG] Security verification failed. Attempts: {new_failed_count}/3. Lockout triggered (PIN Try Limit Exceeded)"
                 )
                 
             return (
                 f"Error: I'm sorry, that answer doesn't match our records. For your security, the card remains blocked. Would you like to try another name?\n\n"
-                f"[SYSTEM_LOG] Security verification failed. Attempt: {new_failed_count}/3 (ISO 8583 Code: 57 - Restricted Card)"
+                f"[SYSTEM_LOG] Security verification failed. Attempt: {new_failed_count}/3 (Restricted Card)"
             )
 
     # --- ACTION: confirm_fraud (Fraud Suspicion flow) ---
@@ -381,7 +380,7 @@ def execute_banking_logic(
             return (
                 f"[AIVA IVR Dialogue]\n"
                 f"\"This transaction is already disputed, and your claim is currently under review. Your card remains deactivated for your safety.\"\n\n"
-                f"[SYSTEM_LOG] Transaction already disputed | Card ending in {card_masked} Stolen/Blocked (ISO 8583 Code: 43 - Stolen Card)"
+                f"[SYSTEM_LOG] Transaction already disputed | Card ending in {card_masked} Stolen/Blocked (Stolen Card)"
             )
             
         timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -407,7 +406,7 @@ def execute_banking_logic(
         return (
             f"[AIVA IVR Dialogue]\n"
             f"\"Thank you for confirming. I have immediately blocked your card ending in {card_masked} so no further charges can go through. I've also filed a dispute for that ${target_txn.get('amount'):,.2f} charge, so you won't be held responsible. A new replacement card is on its way and will arrive in 3 to 5 business days. In the meantime, I have set up an instant digital copy of your new card in your mobile app, ready for Apple Pay or Google Wallet, so you can continue shopping without interruption!\"\n\n"
-            f"[SYSTEM_LOG] Fraud Confirmed | Card ending in {card_masked} blocked, dispute filed, replacement card ordered, digital wallet copy provisioned (ISO 8583 Code: 43 - Stolen Card / Hot-Carded)"
+            f"[SYSTEM_LOG] Fraud Confirmed | Card ending in {card_masked} blocked, dispute filed, replacement card ordered, digital wallet copy provisioned (Stolen Card / Hot-Carded)"
         )
 
     # --- ACTION: deny_fraud (Suspicion cleared) ---
@@ -431,7 +430,7 @@ def execute_banking_logic(
         if not target_txn.get("flagged_suspicious", False):
             return (
                 f"Error: This transaction is already authorized and in a safe status. There are no active fraud alerts to clear.\n\n"
-                f"[SYSTEM_LOG] Request Ignored | Transaction is not flagged as suspicious (ISO 8583 Code: 00 - Already Approved)"
+                f"[SYSTEM_LOG] Request Ignored | Transaction is not flagged as suspicious (Already Approved)"
             )
             
         timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -454,7 +453,7 @@ def execute_banking_logic(
         return (
             f"[AIVA IVR Dialogue]\n"
             f"\"Perfect! Thank you for confirming that you authorized this purchase. I have cleared the alert, and your card ending in {card_masked} remains active and fully ready for use. Is there anything else I can do for you today?\"\n\n"
-            f"[SYSTEM_LOG] Fraud alert resolved by customer | Transaction ID: {transaction_id} marked as Authorized (ISO 8583 Code: 00 - Approved)"
+            f"[SYSTEM_LOG] Fraud alert resolved by customer | Transaction ID: {transaction_id} marked as Authorized (Approved)"
         )
 
     else:

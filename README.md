@@ -12,12 +12,12 @@ A decoupled, stateful Model Context Protocol (MCP) server and HTTP REST Gateway 
 ## 🧠 Core Philosophy: Dual-Channel Response Design
 
 In conversational banking, there is a fundamental conflict between banking mainframes and customer experience:
-1. **Core Banking Mainframes**: Require standardized financial transaction codes (**ISO 8583 Response Codes**) for auditing, fraud tracking, and transactional ledgers.
-2. **Customers (Voice dialogue)**: Cannot understand technical codes (e.g., *"ISO 8583 Code 38"* or *"Decline Code 51"*). Speaking these will ruin the conversational flow.
+1. **Core Banking Mainframes**: Require detailed system audit logs (`[SYSTEM_LOG]`) for auditing, fraud tracking, and transactional ledgers.
+2. **Customers (Voice dialogue)**: Cannot understand technical backend system logs. Speaking these will ruin the conversational flow.
 
 AIVA resolves this by implementing a **Dual-Channel Response Architecture**:
 * **🗣️ Customer Dialogue (`[AIVA IVR Dialogue]`)**: Friendly, empathetic, and 100% natural conversational language to be spoken directly to the user (via text-to-speech). All technical jargon is completely removed.
-* **⚙️ System Audit Log (`[SYSTEM_LOG]`)**: Separated backend log structure appended at the bottom, housing the precise ISO 8583 response codes for downstream databases and engineering audits.
+* **⚙️ System Audit Log (`[SYSTEM_LOG]`)**: Separated backend log structure appended at the bottom, housing the precise status details for downstream databases and engineering audits.
 
 ---
 
@@ -25,15 +25,15 @@ AIVA resolves this by implementing a **Dual-Channel Response Architecture**:
 
 We have designed and verified five industry-grade banking workflow and security guards in the database core logic:
 
-1. **Compromised Card Safety (ISO Code 43 - Stolen/Hot-Carded)**
+1. **Compromised Card Safety (Stolen/Hot-Carded)**
    * **Rule**: Once a card is marked stolen/compromised via confirmed fraud (`confirm_fraud`), self-service unblocking is permanently disabled. Any unblock attempt (even with correct security answers) is rejected, and the customer is routed directly to a human representative.
-2. **Duplicate Dispute Prevention (ISO Code 43 - Stolen/Hot-Carded)**
+2. **Duplicate Dispute Prevention (Already Disputed)**
    * **Rule**: Blocks subsequent dispute submissions on the same transaction ID to prevent double-crediting inflation and audit duplicates.
-3. **Override Blocks on Restricted Card (ISO Code 57 - Restricted Card)**
+3. **Override Blocks on Restricted Card (Blocked/Stolen Card Hold)**
    * **Rule**: Rejects credit limit increase requests on cards that are Blocked, Locked Out, or Stolen.
-4. **Fraud Clearing Validation (ISO Code 00 - Already Approved)**
+4. **Fraud Clearing Validation (Transaction Not Flagged)**
    * **Rule**: Prevents clearing fraud alerts (`deny_fraud`) on normal successful transactions that were never flagged as suspicious by our fraud models.
-5. **3-Strike KBA Verification Lockout (ISO Code 38 - PIN Try Limit Exceeded)**
+5. **3-Strike KBA Verification Lockout (Verification Attempts Exceeded)**
    * **Rule**: To prevent brute-forcing cardholder verification, self-service unblocking locks out after exactly 3 failed attempts, requiring human agent verification.
 
 ---

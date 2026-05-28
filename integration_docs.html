@@ -928,7 +928,7 @@
   "transaction_id": "TXN_FAIL_001"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--blue)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "status": "success",
-  "message": "WELLS FARGO TRANSACTION INQUIRY REPORT\n----------------------------------\nTransaction ID : TXN_FAIL_001\nMerchant       : Luxury Watches Inc\nAmount         : $300.00\nStatus         : Failed\nFailure Reason : Daily Limit Exceeded\n\n[AIVA IVR Dialogue]\n\"I found a failed transaction of $300.00 at Luxury Watches Inc because it exceeded your daily credit limit. To help you with this, I can temporarily increase your credit limit so you can complete your purchase. Would you like me to do that?\"\n\n[SYSTEM_LOG] Transaction ID: TXN_FAIL_001 | Decline Reason: Daily Limit Exceeded (ISO 8583 Code: 51 - Insufficient Funds)"
+  "message": "WELLS FARGO TRANSACTION INQUIRY REPORT\n----------------------------------\nTransaction ID : TXN_FAIL_001\nMerchant       : Luxury Watches Inc\nAmount         : $300.00\nStatus         : Failed\nFailure Reason : Daily Limit Exceeded\n\n[AIVA IVR Dialogue]\n\"I found a failed transaction of $300.00 at Luxury Watches Inc because it exceeded your daily credit limit. To help you with this, I can temporarily increase your credit limit so you can complete your purchase. Would you like me to do that?\"\n\n[SYSTEM_LOG] Transaction ID: TXN_FAIL_001 | Decline Reason: Daily Limit Exceeded (Insufficient Funds)"
 }</code></pre></div></div>      <div class="step-heading"><span class="step-num">C</span>Execute Temporary Limit Increase</div>
       <p class="step-desc">Increase daily limit to $2,000, log action in DB:</p><div class="pre-grid"><div class="pre-block"><div class="pre-block-label">&#9654; Request JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "account_number": "9876543210",
@@ -937,7 +937,7 @@
   "transaction_id": "TXN_FAIL_001"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--green)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "status": "success",
-  "message": "[AIVA IVR Dialogue]\n\"Your limit increase has been approved! The daily limit for your card ending in 1111 has been temporarily increased to $2,000.00. You can now retry your purchase of $300.00 at Luxury Watches Inc. Is there anything else I can do for you today?\"\n\n[SYSTEM_LOG] Daily credit limit increased to $2,000.00 | Account: 9876543210 (ISO 8583 Code: 00 - Decline Code 51 Resolved)"
+  "message": "[AIVA IVR Dialogue]\n\"Your limit increase has been approved! The daily limit for your card ending in 1111 has been temporarily increased to $2,000.00. You can now retry your purchase of $300.00 at Luxury Watches Inc. Is there anything else I can do for you today?\"\n\n[SYSTEM_LOG] Daily credit limit increased to $2,000.00 | Account: 9876543210 (Declined Transaction Resolved)"
 }</code></pre></div></div>    </div>
 
     <!-- Tab 2: Blocked Card -->
@@ -949,7 +949,7 @@
   "query_or_action": "select_transaction"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--blue)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "status": "success",
-  "message": "[AIVA IVR Dialogue]\n\"I see your card ending in 2222 is currently blocked for security. I can easily unblock this for you. First, let's verify your identity. Could you please tell me: What was the name of your first pet??\"\n\n[SYSTEM_LOG] Account: 5432109876 | Status: Blocked (ISO 8583 Code: 57 - Restricted Card) | Attempt: 0/3"
+  "message": "[AIVA IVR Dialogue]\n\"I see your card ending in 2222 is currently blocked for security. I can easily unblock this for you. First, let's verify your identity. Could you please tell me: What was the name of your first pet??\"\n\n[SYSTEM_LOG] Account: 5432109876 | Status: Blocked (Restricted Card) | Attempt: 0/3"
 }</code></pre></div></div>      <div class="step-heading"><span class="step-num">B</span>Verify Security Answer &mdash; Wrong Answer "Rocky" (Rejection)</div>
       <p class="step-desc">Incorrect answer test &mdash; card stays blocked, failed attempt logged:</p><div class="pre-grid"><div class="pre-block"><div class="pre-block-label">&#9654; Request JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "account_number": "5432109876",
@@ -957,7 +957,7 @@
   "query_or_action": "unblock_card",
   "security_answer": "Rocky"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--red)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
-  "detail": "Error: I'm sorry, that answer doesn't match our records. For your security, the card remains blocked. Would you like to try another name?\n\n[SYSTEM_LOG] Security verification failed. Attempt: 1/3 (ISO 8583 Code: 57 - Restricted Card)"
+  "detail": "Error: I'm sorry, that answer doesn't match our records. For your security, the card remains blocked. Would you like to try another name?\n\n[SYSTEM_LOG] Security verification failed. Attempt: 1/3 (Restricted Card)"
 }</code></pre></div></div>      <div class="step-heading"><span class="step-num">C</span>Verify Security Answer &mdash; Correct Answer "Buddy" (Success)</div>
       <p class="step-desc">Correct answer &mdash; card unblocked, set to Active, action logged in DB:</p><div class="pre-grid"><div class="pre-block"><div class="pre-block-label">&#9654; Request JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "account_number": "5432109876",
@@ -966,7 +966,7 @@
   "security_answer": "Buddy"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--green)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "status": "success",
-  "message": "[AIVA IVR Dialogue]\n\"Perfect! That matches our records. Your credit card ending in 2222 has been successfully unblocked and is active for immediate use. You are good to go!\"\n\n[SYSTEM_LOG] Card ending in 2222 set to Active | Account: 5432109876 (ISO 8583 Code: 00 - Approved)"
+  "message": "[AIVA IVR Dialogue]\n\"Perfect! That matches our records. Your credit card ending in 2222 has been successfully unblocked and is active for immediate use. You are good to go!\"\n\n[SYSTEM_LOG] Card ending in 2222 set to Active | Account: 5432109876 (Approved)"
 }</code></pre></div></div>    </div>
 
     <!-- Tab 3: Fraud Confirmed -->
@@ -987,7 +987,7 @@
   "transaction_id": "TXN_FRAUD_001"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--blue)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "status": "success",
-  "message": "WELLS FARGO TRANSACTION INQUIRY REPORT\n----------------------------------\nTransaction ID : TXN_FRAUD_001\nMerchant       : Electronics Depot\nAmount         : $2,500.00\nStatus         : Success\nFlagged State  : FLAGGED SUSPICIOUS BY FRAUD DETECTION\n\n[AIVA IVR Dialogue]\n\"I see a charge of $2,500.00 at Electronics Depot on your statement that has been flagged as suspicious. Did you authorize this purchase?\"\n\n[SYSTEM_LOG] Transaction ID: TXN_FRAUD_001 | Status: Flagged Suspicious (ISO 8583 Code: 34 - Suspected Fraud)"
+  "message": "WELLS FARGO TRANSACTION INQUIRY REPORT\n----------------------------------\nTransaction ID : TXN_FRAUD_001\nMerchant       : Electronics Depot\nAmount         : $2,500.00\nStatus         : Success\nFlagged State  : FLAGGED SUSPICIOUS BY FRAUD DETECTION\n\n[AIVA IVR Dialogue]\n\"I see a charge of $2,500.00 at Electronics Depot on your statement that has been flagged as suspicious. Did you authorize this purchase?\"\n\n[SYSTEM_LOG] Transaction ID: TXN_FRAUD_001 | Status: Flagged Suspicious (Suspected Fraud)"
 }</code></pre></div></div>      <div class="step-heading"><span class="step-num">C</span>Confirm Fraud &mdash; Block Card, Dispute &amp; Order Replacement</div>
       <p class="step-desc">Customer confirms fraud: card blocked immediately, dispute filed, replacement ordered, logged in DB:</p><div class="pre-grid"><div class="pre-block"><div class="pre-block-label">&#9654; Request JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "account_number": "8765432109",
@@ -996,7 +996,7 @@
   "transaction_id": "TXN_FRAUD_001"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--green)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "status": "success",
-  "message": "[AIVA IVR Dialogue]\n\"Thank you for confirming. I have immediately blocked your card ending in 3333 so no further charges can go through. I've also filed a dispute for that $2,500.00 charge, so you won't be held responsible. A new replacement card is on its way and will arrive in 3 to 5 business days. In the meantime, I have set up an instant digital copy of your new card in your mobile app, ready for Apple Pay or Google Wallet, so you can continue shopping without interruption!\"\n\n[SYSTEM_LOG] Fraud Confirmed | Card ending in 3333 blocked, dispute filed, replacement card ordered, digital wallet copy provisioned (ISO 8583 Code: 43 - Stolen Card / Hot-Carded)"
+  "message": "[AIVA IVR Dialogue]\n\"Thank you for confirming. I have immediately blocked your card ending in 3333 so no further charges can go through. I've also filed a dispute for that $2,500.00 charge, so you won't be held responsible. A new replacement card is on its way and will arrive in 3 to 5 business days. In the meantime, I have set up an instant digital copy of your new card in your mobile app, ready for Apple Pay or Google Wallet, so you can continue shopping without interruption!\"\n\n[SYSTEM_LOG] Fraud Confirmed | Card ending in 3333 blocked, dispute filed, replacement card ordered, digital wallet copy provisioned (Stolen Card / Hot-Carded)"
 }</code></pre></div></div>    </div>
 
     <!-- Tab 4: Fraud Denied -->
@@ -1009,7 +1009,7 @@
   "transaction_id": "TXN_FRAUD_001"
 }</code></pre></div><div class="pre-block" style="border-left:3px solid var(--green)"><div class="pre-block-label">&#9664; Live Response JSON</div><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>{
   "status": "success",
-  "message": "[AIVA IVR Dialogue]\n\"Perfect! Thank you for confirming that you authorized this purchase. I have cleared the alert, and your card ending in 3333 remains active and fully ready for use. Is there anything else I can do for you today?\"\n\n[SYSTEM_LOG] Fraud alert resolved by customer | Transaction ID: TXN_FRAUD_001 marked as Authorized (ISO 8583 Code: 00 - Approved)"
+  "message": "[AIVA IVR Dialogue]\n\"Perfect! Thank you for confirming that you authorized this purchase. I have cleared the alert, and your card ending in 3333 remains active and fully ready for use. Is there anything else I can do for you today?\"\n\n[SYSTEM_LOG] Fraud alert resolved by customer | Transaction ID: TXN_FRAUD_001 marked as Authorized (Approved)"
 }</code></pre></div></div>    </div>
   </div>
 
@@ -1074,7 +1074,7 @@
       <span class="badge" style="background:rgba(16,185,129,0.15); border:1px solid var(--green); color:var(--green); margin-bottom:0;">ALL PASSED</span>
     </h3>
     <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:1.5rem;">
-      Integration test suite executed on <strong style="color:var(--gold)">2026-05-28 16:33:36</strong>. 
+      Integration test suite executed on <strong style="color:var(--gold)">2026-05-28 17:21:25</strong>. 
       All core business flows (Failed Transaction, Blocked Card, Fraud containment, and Fraud authorization) were validated on the local FastAPI proxy gateway.
     </p>
     
