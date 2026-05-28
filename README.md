@@ -5,7 +5,7 @@
 [![MCP](https://img.shields.io/badge/Model_Context_Protocol-Model-blue?style=for-the-badge)](https://modelcontextprotocol.io/)
 [![Wells Fargo](https://img.shields.io/badge/Wells_Fargo-D11226?style=for-the-badge&logo=wells-fargo&logoColor=F2A900)](https://www.wellsfargo.com/)
 
-A decoupled, stateful Model Context Protocol (MCP) server and HTTP REST Gateway styled exactly as a **Wells Fargo Credit Card IVR Integration**. It bridges the gap between raw backend core banking mainframes and conversational voice AI frameworks (such as Twilio Voice, Whisper, ElevenLabs, and CrewAI).
+A decoupled, stateful Model Context Protocol (MCP) server and HTTP REST Gateway styled exactly as a **Banking Credit Card IVR Integration**. It bridges the gap between raw backend core banking mainframes and conversational voice AI frameworks (such as Twilio Voice, Whisper, ElevenLabs, and CrewAI).
 
 ---
 
