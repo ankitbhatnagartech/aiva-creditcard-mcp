@@ -73,7 +73,7 @@ SVG_FLOW1 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
   <!-- Actor Headers -->
   <rect x="60" y="52" width="140" height="64" rx="10" fill="#101427" stroke="#d11226" stroke-width="1.5"/>
   <text x="130" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Caller</text>
-  <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(Sarah Jenkins)</text>
+  <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(Vedant)</text>
 
   <rect x="310" y="52" width="160" height="64" rx="10" fill="#101427" stroke="#3b82f6" stroke-width="1.5"/>
   <text x="390" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">CrewAI Agent</text>
@@ -85,7 +85,7 @@ SVG_FLOW1 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
 
   <rect x="845" y="52" width="150" height="64" rx="10" fill="#101427" stroke="#f59e0b" stroke-width="1.5"/>
   <text x="920" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">MongoDB Atlas</text>
-  <text x="920" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(wf-creditcards-ivr)</text>
+  <text x="920" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(nextgen-creditcards-ivr)</text>
 
   <!-- Execution bars -->
   <rect x="385" y="135" width="10" height="370" fill="#3b82f6" opacity="0.25" rx="2"/>
@@ -97,10 +97,10 @@ SVG_FLOW1 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
   <text x="258" y="154" text-anchor="middle" fill="#f1f5f9" font-size="11" font-family="Plus Jakarta Sans,sans-serif">"My watch purchase of $300 failed"</text>
 
   <line x1="395" y1="190" x2="643" y2="190" stroke="#f2a900" stroke-width="2" marker-end="url(#arr1)"/>
-  <text x="519" y="182" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="monospace">get_transactions("9876543210", "1111")</text>
+  <text x="519" y="182" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="monospace">get_transactions("770321003", "7003")</text>
 
   <line x1="655" y1="210" x2="913" y2="210" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr1)"/>
-  <text x="782" y="202" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">find_one({account_number: "9876543210"})</text>
+  <text x="782" y="202" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">find_one({account_number: "770321003"})</text>
 
   <line x1="913" y1="230" x2="657" y2="230" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr1)"/>
   <text x="782" y="224" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">Returns account statement data</text>
@@ -176,7 +176,7 @@ SVG_FLOW2 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
   <!-- Actor Headers -->
   <rect x="60" y="52" width="140" height="64" rx="10" fill="#101427" stroke="#d11226" stroke-width="1.5"/>
   <text x="130" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Caller</text>
-  <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(Michael Chen)</text>
+  <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(Maria Gonzalez)</text>
 
   <rect x="310" y="52" width="160" height="64" rx="10" fill="#101427" stroke="#3b82f6" stroke-width="1.5"/>
   <text x="390" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">CrewAI Agent</text>
@@ -188,7 +188,7 @@ SVG_FLOW2 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
 
   <rect x="845" y="52" width="150" height="64" rx="10" fill="#101427" stroke="#f59e0b" stroke-width="1.5"/>
   <text x="920" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">MongoDB Atlas</text>
-  <text x="920" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(wf-creditcards-ivr)</text>
+  <text x="920" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(nextgen-creditcards-ivr)</text>
 
   <!-- Execution bars -->
   <rect x="385" y="135" width="10" height="370" fill="#3b82f6" opacity="0.25" rx="2"/>
@@ -200,16 +200,16 @@ SVG_FLOW2 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
   <text x="258" y="154" text-anchor="middle" fill="#f1f5f9" font-size="11" font-family="Plus Jakarta Sans,sans-serif">"Why is my card declined?"</text>
 
   <line x1="395" y1="190" x2="643" y2="190" stroke="#f2a900" stroke-width="2" marker-end="url(#arr2)"/>
-  <text x="519" y="182" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="monospace">select_transaction("5432109876", "2222")</text>
+  <text x="519" y="182" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="monospace">select_transaction("+15550102", "8121")</text>
 
   <line x1="655" y1="210" x2="913" y2="210" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr2)"/>
-  <text x="782" y="202" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">find_one({account_number: "5432109876"})</text>
+  <text x="782" y="202" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">find_one({account_number: "+15550102"})</text>
 
   <line x1="913" y1="230" x2="657" y2="230" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr2)"/>
   <text x="782" y="224" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">Returns account status: Blocked</text>
 
   <line x1="643" y1="254" x2="397" y2="254" stroke="#f2a900" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr2)"/>
-  <text x="519" y="246" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">Card ending in 2222 is BLOCKED. Prompts: "What was your first pet's name?"</text>
+  <text x="519" y="246" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">Card ending in 8121 is BLOCKED. Prompts: "What was your first pet's name?"</text>
 
   <text x="22" y="290" fill="#f2a900" font-size="10" font-family="monospace" font-weight="bold">2</text>
   <line x1="383" y1="284" x2="137" y2="284" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr2)"/>
@@ -275,7 +275,7 @@ SVG_FLOW3 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
   <!-- Actor Headers -->
   <rect x="60" y="52" width="140" height="64" rx="10" fill="#101427" stroke="#d11226" stroke-width="1.5"/>
   <text x="130" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Caller</text>
-  <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(Elena Rostova)</text>
+  <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(Emily Watson)</text>
 
   <rect x="310" y="52" width="160" height="64" rx="10" fill="#101427" stroke="#3b82f6" stroke-width="1.5"/>
   <text x="390" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">CrewAI Agent</text>
@@ -287,7 +287,7 @@ SVG_FLOW3 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
 
   <rect x="845" y="52" width="150" height="64" rx="10" fill="#101427" stroke="#f59e0b" stroke-width="1.5"/>
   <text x="920" y="74" text-anchor="middle" fill="#f1f5f9" font-size="13" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">MongoDB Atlas</text>
-  <text x="920" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(wf-creditcards-ivr)</text>
+  <text x="920" y="92" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">(nextgen-creditcards-ivr)</text>
 
   <!-- Execution bars -->
   <rect x="385" y="135" width="10" height="370" fill="#3b82f6" opacity="0.25" rx="2"/>
@@ -299,10 +299,10 @@ SVG_FLOW3 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
   <text x="258" y="154" text-anchor="middle" fill="#f1f5f9" font-size="11" font-family="Plus Jakarta Sans,sans-serif">"I have a query about a suspicious $2500 charge"</text>
 
   <line x1="395" y1="190" x2="643" y2="190" stroke="#f2a900" stroke-width="2" marker-end="url(#arr3)"/>
-  <text x="519" y="182" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="monospace">get_transactions("8765432109", "3333")</text>
+  <text x="519" y="182" text-anchor="middle" fill="#f2a900" font-size="10.5" font-family="monospace">get_transactions("+15550104", "5528")</text>
 
   <line x1="655" y1="210" x2="913" y2="210" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr3)"/>
-  <text x="782" y="202" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">find_one({account_number: "8765432109"})</text>
+  <text x="782" y="202" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">find_one({account_number: "+15550104"})</text>
 
   <line x1="913" y1="230" x2="657" y2="230" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr3)"/>
   <text x="782" y="224" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace">Returns account data (TXN_FRAUD_001 is flagged)</text>
@@ -341,6 +341,7 @@ SVG_FLOW3 = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" st
   <line x1="643" y1="490" x2="397" y2="490" stroke="#10b981" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr3)"/>
   <text x="519" y="482" text-anchor="middle" fill="#10b981" font-size="10.5" font-family="Plus Jakarta Sans,sans-serif">Success: Fraud flag cleared. Card remains ACTIVE (Logged in DB)</text>
 </svg>"""
+
 
 # ------------------ AUTOMATED TEST RUNNER ------------------
 
@@ -388,104 +389,106 @@ def run_test_suite():
     print("Database successfully seeded!\n")
 
     # ------------------ FLOW 1: FAILED TRANSACTION ------------------
-    print("Step 2: Testing Flow 1 - Failed Transaction (Sarah Jenkins)")
+    print("Step 2: Testing Flow 1 - Failed Transaction (Vedant)")
 
-    payload_1a = {"account_number": "9876543210", "card_number": "1111", "query_or_action": "get_transactions"}
-    passed, res = run_tc("Flow 1.A: Fetch Statement (Sarah Jenkins)", payload_1a, 200, "Sarah Jenkins")
+    payload_1a = {"account_number": "770321003", "card_number": "7003", "query_or_action": "get_transactions"}
+    passed, res = run_tc("Flow 1.A: Fetch Statement (Vedant)", payload_1a, 200, "Vedant")
     results["flow1_stepA_req"] = json.dumps(payload_1a, indent=2)
     results["flow1_stepA_res"] = json.dumps(res, indent=2)
 
-    payload_1b = {"account_number": "9876543210", "card_number": "1111", "query_or_action": "select_transaction", "transaction_id": "TXN_FAIL_001"}
+    payload_1b = {"account_number": "770321003", "card_number": "7003", "query_or_action": "select_transaction", "transaction_id": "TXN_FAIL_001"}
     passed, res = run_tc("Flow 1.B: Select Failed Transaction TXN_FAIL_001", payload_1b, 200, "Daily Limit Exceeded")
     results["flow1_stepB_req"] = json.dumps(payload_1b, indent=2)
     results["flow1_stepB_res"] = json.dumps(res, indent=2)
 
-    payload_1c = {"account_number": "9876543210", "card_number": "1111", "query_or_action": "request_limit_increase", "transaction_id": "TXN_FAIL_001"}
-    passed, res = run_tc("Flow 1.C: Request Limit Increase (Sarah Jenkins)", payload_1c, 200, "limit increase has been approved")
+    payload_1c = {"account_number": "770321003", "card_number": "7003", "query_or_action": "request_limit_increase", "transaction_id": "TXN_FAIL_001"}
+    passed, res = run_tc("Flow 1.C: Request Limit Increase (Vedant)", payload_1c, 200, "limit increase has been approved")
     results["flow1_stepC_req"] = json.dumps(payload_1c, indent=2)
     results["flow1_stepC_res"] = json.dumps(res, indent=2)
 
-    # NEW Flow 1.D: Request limit increase on blocked card (expected rejection)
-    payload_1d = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "request_limit_increase", "transaction_id": "TXN_MIKE_001"}
+    # NEW Flow 1.D: Request daily limit increase on blocked card (expected rejection)
+    payload_1d = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "request_limit_increase", "transaction_id": "TXN_MARIA_001"}
     passed, res = run_tc("Flow 1.D (NEW): Limit Increase on Blocked Card (Expected Rejection)", payload_1d, 400, "security hold on this card")
 
     # ------------------ FLOW 2: BLOCKED CARD ------------------
-    print("\nStep 3: Testing Flow 2 - Blocked Card (Michael Chen)")
+    print("\nStep 3: Testing Flow 2 - Blocked Card (Maria Gonzalez)")
 
-    payload_2a = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "select_transaction"}
-    passed, res = run_tc("Flow 2.A: Status Check on Blocked Card (Michael Chen)", payload_2a, 200, "currently blocked")
+    payload_2a = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "select_transaction"}
+    passed, res = run_tc("Flow 2.A: Status Check on Blocked Card (Maria Gonzalez)", payload_2a, 200, "currently blocked")
     results["flow2_stepA_req"] = json.dumps(payload_2a, indent=2)
     results["flow2_stepA_res"] = json.dumps(res, indent=2)
 
-    payload_2b = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Rocky"}
+    payload_2b = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Rocky"}
     passed, res = run_tc("Flow 2.B: Unblock with WRONG Answer 'Rocky' (Expected Rejection)", payload_2b, 400, "verification failed")
     results["flow2_stepB_req"] = json.dumps(payload_2b, indent=2)
     results["flow2_stepB_res"] = json.dumps(res, indent=2)
 
-    payload_2c = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Buddy"}
+    payload_2c = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Buddy"}
     passed, res = run_tc("Flow 2.C: Unblock with CORRECT Answer 'Buddy'", payload_2c, 200, "successfully unblocked")
     results["flow2_stepC_req"] = json.dumps(payload_2c, indent=2)
     results["flow2_stepC_res"] = json.dumps(res, indent=2)
 
-    # NEW Flow 2.D: Sequential 3-Strike Lockout Validation (Re-seeds first to clear Michael Chen's Active card status)
+    # NEW Flow 2.D: Sequential 3-Strike Lockout Validation (Re-seeds first to clear Maria Gonzalez's Active card status)
     print("\nStep 3.D: Testing Flow 2 Lockout - sequential 3 wrong answers -> correct rejected")
     seed_db.seed_database()
     
     # Attempt 1 (Wrong)
-    p_lock_1 = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Max"}
+    p_lock_1 = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Max"}
     run_tc("Flow 2.D1: Unblock wrong attempt 1", p_lock_1, 400, "remains blocked")
     # Attempt 2 (Wrong)
-    p_lock_2 = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Charlie"}
+    p_lock_2 = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Charlie"}
     run_tc("Flow 2.D2: Unblock wrong attempt 2", p_lock_2, 400, "remains blocked")
     # Attempt 3 (Wrong -> Locks out unblocking)
-    p_lock_3 = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Rocky"}
+    p_lock_3 = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Rocky"}
     run_tc("Flow 2.D3: Unblock wrong attempt 3 (Trigger Lockout)", p_lock_3, 400, "locked due to too many failed attempts")
     # Attempt 4 (Correct -> Must be rejected because of active lockout status!)
-    p_lock_4 = {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Buddy"}
+    p_lock_4 = {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Buddy"}
     run_tc("Flow 2.D4: Unblock correct attempt 4 (Verify Lockout Enforced)", p_lock_4, 400, "locked self-service unblocking")
 
     # ------------------ FLOW 3: FRAUD CONFIRMED ------------------
-    print("\nStep 4: Testing Flow 3 - Fraud Suspicion & Containment (Elena Rostova)")
-    # Re-seed database so Elena's card is active and unresolved again
+    print("\nStep 4: Testing Flow 3 - Fraud Suspicion & Containment (Emily Watson)")
+    # Re-seed database so Emily Watson's card is active and unresolved again
     seed_db.seed_database()
 
-    payload_3a = {"account_number": "8765432109", "card_number": "3333", "query_or_action": "get_transactions"}
-    passed, res = run_tc("Flow 3.A: Fetch Statement (Elena Rostova)", payload_3a, 200, "Elena Rostova")
+    payload_3a = {"account_number": "+15550104", "card_number": "5528", "query_or_action": "get_transactions"}
+    passed, res = run_tc("Flow 3.A: Fetch Statement (Emily Watson)", payload_3a, 200, "Emily Watson")
     results["flow3_stepA_req"] = json.dumps(payload_3a, indent=2)
     results["flow3_stepA_res"] = json.dumps(res, indent=2)
 
-    payload_3b = {"account_number": "8765432109", "card_number": "3333", "query_or_action": "select_transaction", "transaction_id": "TXN_FRAUD_001"}
+    payload_3b = {"account_number": "+15550104", "card_number": "5528", "query_or_action": "select_transaction", "transaction_id": "TXN_FRAUD_001"}
     passed, res = run_tc("Flow 3.B: Select Suspicious Transaction TXN_FRAUD_001", payload_3b, 200, "suspicious")
     results["flow3_stepB_req"] = json.dumps(payload_3b, indent=2)
     results["flow3_stepB_res"] = json.dumps(res, indent=2)
 
-    payload_3c = {"account_number": "8765432109", "card_number": "3333", "query_or_action": "confirm_fraud", "transaction_id": "TXN_FRAUD_001"}
+    payload_3c = {"account_number": "+15550104", "card_number": "5528", "query_or_action": "confirm_fraud", "transaction_id": "TXN_FRAUD_001"}
     passed, res = run_tc("Flow 3.C: Confirm Fraud & Dispute Transaction", payload_3c, 200, "immediately blocked your card")
     results["flow3_stepC_req"] = json.dumps(payload_3c, indent=2)
     results["flow3_stepC_res"] = json.dumps(res, indent=2)
 
     # NEW Flow 3.D: Duplicate Dispute Prevention
-    payload_3d_dup = {"account_number": "8765432109", "card_number": "3333", "query_or_action": "confirm_fraud", "transaction_id": "TXN_FRAUD_001"}
+    payload_3d_dup = {"account_number": "+15550104", "card_number": "5528", "query_or_action": "confirm_fraud", "transaction_id": "TXN_FRAUD_001"}
     run_tc("Flow 3.D (NEW): Duplicate dispute submission (Expected Block)", payload_3d_dup, 200, "already disputed")
 
     # NEW Flow 3.E: Compromised Card unblocking attempt (Expected Block)
-    payload_3e_unb = {"account_number": "8765432109", "card_number": "3333", "query_or_action": "unblock_card", "security_answer": "Buddy"}
+    payload_3e_unb = {"account_number": "+15550104", "card_number": "5528", "query_or_action": "unblock_card", "security_answer": "Buddy"}
     run_tc("Flow 3.E (NEW): Unblock attempt on Stolen Card (Expected Rejection)", payload_3e_unb, 400, "permanently deactivated due to a reported fraud dispute")
 
     # ------------------ FLOW 4: FRAUD DENIED (RESET STATE FIRST) ------------------
-    print("\nStep 5: Testing Flow 3 Alternate - Fraud Denied (Re-seeding Elena's state)")
-    seed_db.seed_database() # re-seed to make Elena's card Active and flagged charge unresolved again!
+    print("\nStep 5: Testing Flow 3 Alternate - Fraud Denied (Re-seeding Emily Watson's state)")
+    seed_db.seed_database() # re-seed to make Emily Watson's card Active and flagged charge unresolved again!
     print("Database successfully re-seeded for alternate flow!")
 
-    payload_3d = {"account_number": "8765432109", "card_number": "3333", "query_or_action": "deny_fraud", "transaction_id": "TXN_FRAUD_001"}
+    payload_3d = {"account_number": "+15550104", "card_number": "5528", "query_or_action": "deny_fraud", "transaction_id": "TXN_FRAUD_001"}
     passed, res = run_tc("Flow 3.D: Deny Fraud & Authorize Transaction (Alternate Path)", payload_3d, 200, "Authorized")
     # Store this response in results so we can display it in the HTML report
     results["flow3_stepD_req"] = json.dumps(payload_3d, indent=2)
     results["flow3_stepD_res"] = json.dumps(res, indent=2)
 
     # NEW Flow 4.B: Clear fraud alert on non-flagged transaction (Expected Block)
-    payload_4b = {"account_number": "9876543210", "card_number": "1111", "query_or_action": "deny_fraud", "transaction_id": "TXN_SARAH_001"}
+    payload_4b = {"account_number": "770321003", "card_number": "7003", "query_or_action": "deny_fraud", "transaction_id": "TXN_VEDANT_001"}
     run_tc("Flow 4.B (NEW): Clear alert on non-flagged transaction (Expected Rejection)", payload_4b, 400, "already authorized and in a safe status")
+
+
 
 
     # ------------------ PRINT CONSOLE PASS/FAIL SUMMARY ------------------
@@ -825,47 +828,48 @@ def generate_html_report(res, test_cases):
 <div class="container">
 
   <!-- SECTION 1: DEMO SCHEMA -->
-  <h2 class="section-title">Wells Fargo Isolated Demo Schema</h2>
+  <h2 class="section-title">NextGen Bank Isolated Demo Schema</h2>
   <div class="intro-block">
     <h3>&#128737;&#65039; Live Demonstration Isolation Pattern</h3>
     <p>The database seeds <strong>three distinct customer accounts</strong> formatted identically to real
-    <strong>Wells Fargo 10-digit Account Numbers</strong>. Each profile isolates exactly one business flow
+    <strong>NextGen Bank 10-digit Account Numbers</strong>. Each profile isolates exactly one business flow
     so Failed Transactions, Card Blocks, and Fraud Alerts can be demoed concurrently without state contamination.</p>
   </div>
   <div class="grid-3">
     <div class="card card-failed">
       <div class="card-icon">&#128201;</div>
       <h3>Flow 1 &mdash; Failed Transaction</h3>
-      <p>Sarah's $300.00 watch purchase failed (daily limit $1,000 exceeded). AIVA resolves via temporary limit increase.</p>
+      <p>Vedant's $300.00 watch purchase failed (daily limit $1,000 exceeded). AIVA resolves via temporary limit increase.</p>
       <div class="card-meta">
-        <div><span class="meta-label">Customer</span><span class="meta-val">Sarah Jenkins</span></div>
-        <div><span class="meta-label">Account No</span><span class="meta-val">9876543210</span></div>
-        <div><span class="meta-label">Card Ends</span><span class="meta-val">&middot;&middot; 1111</span></div>
+        <div><span class="meta-label">Customer</span><span class="meta-val">Vedant</span></div>
+        <div><span class="meta-label">Account No</span><span class="meta-val">770321003</span></div>
+        <div><span class="meta-label">Card Ends</span><span class="meta-val">&middot;&middot; 7003</span></div>
         <div><span class="meta-label">Action</span><span class="meta-val">request_limit_increase</span></div>
       </div>
     </div>
     <div class="card card-blocked">
       <div class="card-icon">&#128274;</div>
       <h3>Flow 2 &mdash; Blocked Card</h3>
-      <p>Michael's card is Blocked. AIVA verifies his security pet-name question (&quot;Buddy&quot;) and sets card Active.</p>
+      <p>Maria Gonzalez's card is Blocked. AIVA verifies his security pet-name question (&quot;Buddy&quot;) and sets card Active.</p>
       <div class="card-meta">
-        <div><span class="meta-label">Customer</span><span class="meta-val">Michael Chen</span></div>
-        <div><span class="meta-label">Account No</span><span class="meta-val">5432109876</span></div>
-        <div><span class="meta-label">Card Ends</span><span class="meta-val">&middot;&middot; 2222</span></div>
+        <div><span class="meta-label">Customer</span><span class="meta-val">Maria Gonzalez</span></div>
+        <div><span class="meta-label">Account No</span><span class="meta-val">+15550102</span></div>
+        <div><span class="meta-label">Card Ends</span><span class="meta-val">&middot;&middot; 8121</span></div>
         <div><span class="meta-label">Action</span><span class="meta-val">unblock_card</span></div>
       </div>
     </div>
     <div class="card card-fraud">
       <div class="card-icon">&#128680;</div>
       <h3>Flow 3 &mdash; Fraud Suspicion</h3>
-      <p>Elena has an unrecognized $2,500.00 charge. AIVA blocks the card, disputes the transaction, orders replacement.</p>
+      <p>Emily Watson has an unrecognized $2,500.00 charge. AIVA blocks the card, disputes the transaction, orders replacement.</p>
       <div class="card-meta">
-        <div><span class="meta-label">Customer</span><span class="meta-val">Elena Rostova</span></div>
-        <div><span class="meta-label">Account No</span><span class="meta-val">8765432109</span></div>
-        <div><span class="meta-label">Card Ends</span><span class="meta-val">&middot;&middot; 3333</span></div>
+        <div><span class="meta-label">Customer</span><span class="meta-val">Emily Watson</span></div>
+        <div><span class="meta-label">Account No</span><span class="meta-val">+15550104</span></div>
+        <div><span class="meta-label">Card Ends</span><span class="meta-val">&middot;&middot; 5528</span></div>
         <div><span class="meta-label">Action</span><span class="meta-val">confirm_fraud / deny_fraud</span></div>
       </div>
     </div>
+
   </div>
 
   <!-- SECTION: CONVERSATIONAL WALKTHROUGH -->
@@ -879,6 +883,7 @@ def generate_html_report(res, test_cases):
       <div class="conv-tab" onclick="switchConvTab(event,'c-blocked')">&#128274; Flow 2: Blocked Card</div>
       <div class="conv-tab" onclick="switchConvTab(event,'c-fraud-yes')">&#128680; Flow 3: Fraud Confirmed</div>
       <div class="conv-tab" onclick="switchConvTab(event,'c-fraud-no')">&#10003; Flow 4: Fraud Denied</div>
+      
     </div>
 
     <!-- Conv Tab 1: Failed Transaction -->
@@ -892,17 +897,17 @@ def generate_html_report(res, test_cases):
           </div>
           <div class="chat-container">
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Sarah Jenkins)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Vedant)</div>
               <div class="chat-bubble chat-bubble-user">"Hello, my card was declined today when I tried to buy a watch. Can you see why it failed?"</div>
             </div>
             <div class="chat-row">
               <div class="chat-label chat-label-agent">🤖 CrewAI Orchestration Logic</div>
-              <div class="chat-bubble chat-bubble-agent">Identifies customer, validates card 1111 on account 9876543210. Decides to fetch transactions list to inspect failed purchases. Calls <strong>get_transactions</strong>.</div>
+              <div class="chat-bubble chat-bubble-agent">Identifies customer, validates card 7003 on account 770321003. Decides to fetch transactions list to inspect failed purchases. Calls <strong>get_transactions</strong>.</div>
             </div>
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "9876543210", "card_number": "1111", "query_or_action": "get_transactions"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "770321003", "card_number": "7003", "query_or_action": "get_transactions"}<br/><br/>
                 <strong>Response:</strong> Statement history successfully loaded. Highlights <strong>TXN_FAIL_001</strong> ($300.00 at Luxury Watches Inc) with status <strong>Failed (Daily Limit Exceeded)</strong>. Available Credit is $100.00, Limit is $1,000.00.
               </div>
             </div>
@@ -921,7 +926,7 @@ def generate_html_report(res, test_cases):
               <div class="chat-bubble chat-bubble-agent" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:var(--text);">"I see a failed transaction of $300.00 at Luxury Watches Inc because it exceeded your daily limit. Is this the charge you are referring to?"</div>
             </div>
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Sarah Jenkins)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Vedant)</div>
               <div class="chat-bubble chat-bubble-user">"Yes, that watch purchase is mine. Why did it decline?"</div>
             </div>
             <div class="chat-row">
@@ -931,7 +936,7 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "9876543210", "card_number": "1111", "query_or_action": "select_transaction", "transaction_id": "TXN_FAIL_001"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "770321003", "card_number": "7003", "query_or_action": "select_transaction", "transaction_id": "TXN_FAIL_001"}<br/><br/>
                 <strong>Response:</strong> Failed transaction query loaded. <strong>Probable Action:</strong> Limit exceeded. Offer temporary credit limit increase to $2,000.00 so the customer can retry.
               </div>
             </div>
@@ -950,7 +955,7 @@ def generate_html_report(res, test_cases):
               <div class="chat-bubble chat-bubble-agent" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:var(--text);">"Since you spent $900.00 earlier, this $300.00 purchase exceeded your daily limit of $1,000.00. I can temporarily increase your credit limit to $2,000.00 for the next 24 hours so you can successfully complete your purchase. Would you like me to do that?"</div>
             </div>
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Sarah Jenkins)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Vedant)</div>
               <div class="chat-bubble chat-bubble-user">"Yes, please do that. That would be perfect."</div>
             </div>
             <div class="chat-row">
@@ -960,7 +965,7 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "9876543210", "card_number": "1111", "query_or_action": "request_limit_increase", "transaction_id": "TXN_FAIL_001"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "770321003", "card_number": "7003", "query_or_action": "request_limit_increase", "transaction_id": "TXN_FAIL_001"}<br/><br/>
                 <strong>Response:</strong> Credit limit successfully increased to $2,000.00 in database. Action logged in core logs.
               </div>
             </div>
@@ -984,7 +989,7 @@ def generate_html_report(res, test_cases):
           </div>
           <div class="chat-container">
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Michael Chen)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Maria Gonzalez)</div>
               <div class="chat-bubble chat-bubble-user">"Hi, I tried to use my credit card at a gas station, but it declined. Is there a block on my card?"</div>
             </div>
             <div class="chat-row">
@@ -994,7 +999,7 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "5432109876", "card_number": "2222", "query_or_action": "select_transaction"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "+15550102", "card_number": "8121", "query_or_action": "select_transaction"}<br/><br/>
                 <strong>Response:</strong> Status loaded: <strong>Blocked</strong>. <strong>Probable Action:</strong> Prompt security verification pet question: "What was the name of your first pet?".
               </div>
             </div>
@@ -1010,10 +1015,10 @@ def generate_html_report(res, test_cases):
           <div class="chat-container">
             <div class="chat-row">
               <div class="chat-label chat-label-agent">🤖 CrewAI Voice Response to Customer</div>
-              <div class="chat-bubble chat-bubble-agent" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:var(--text);">"Yes, I see your credit card ending in 2222 is currently blocked for security reasons. I can unblock it for you right now, but first, I need to verify your identity. Could you please tell me: What was the name of your first pet?"</div>
+              <div class="chat-bubble chat-bubble-agent" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:var(--text);">"Yes, I see your credit card ending in 8121 is currently blocked for security reasons. I can unblock it for you right now, but first, I need to verify your identity. Could you please tell me: What was the name of your first pet?"</div>
             </div>
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Michael Chen)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Maria Gonzalez)</div>
               <div class="chat-bubble chat-bubble-user">"Oh, let me think... was it Rocky?"</div>
             </div>
             <div class="chat-row">
@@ -1023,7 +1028,7 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Rocky"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Rocky"}<br/><br/>
                 <strong>Response:</strong> (HTTP 400) Verification failed. Card remains <strong>Blocked</strong>. FAILED_UNBLOCK_ATTEMPT logged.
               </div>
             </div>
@@ -1042,7 +1047,7 @@ def generate_html_report(res, test_cases):
               <div class="chat-bubble chat-bubble-agent" style="background:rgba(209,18,38,0.1); border:1px solid rgba(209,18,38,0.25); color:#ff808b;">"I'm sorry, 'Rocky' doesn't match our records. For your security, the card remains blocked. Would you like to try another name?"</div>
             </div>
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Michael Chen)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Maria Gonzalez)</div>
               <div class="chat-bubble chat-bubble-user">"Ah, my mistake! It was Buddy!"</div>
             </div>
             <div class="chat-row">
@@ -1052,13 +1057,13 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "5432109876", "card_number": "2222", "query_or_action": "unblock_card", "security_answer": "Buddy"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "+15550102", "card_number": "8121", "query_or_action": "unblock_card", "security_answer": "Buddy"}<br/><br/>
                 <strong>Response:</strong> Verification passed. Card status successfully set to <strong>Active</strong>. CARD_UNBLOCKED logged in database.
               </div>
             </div>
             <div class="chat-row">
               <div class="chat-label chat-label-agent">🤖 CrewAI Voice Response to Customer</div>
-              <div class="chat-bubble chat-bubble-agent" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--green);">"Perfect! That matches our records. Your credit card ending in 2222 is now successfully unblocked and ACTIVE for immediate use. You are good to go!"</div>
+              <div class="chat-bubble chat-bubble-agent" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--green);">"Perfect! That matches our records. Your credit card ending in 8121 is now successfully unblocked and ACTIVE for immediate use. You are good to go!"</div>
             </div>
           </div>
         </div>
@@ -1076,7 +1081,7 @@ def generate_html_report(res, test_cases):
           </div>
           <div class="chat-container">
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Elena Rostova)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Emily Watson)</div>
               <div class="chat-bubble chat-bubble-user">"I saw a notification for a huge charge of $2,500 that I did not make. Can you look into this?"</div>
             </div>
             <div class="chat-row">
@@ -1086,7 +1091,7 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "8765432109", "card_number": "3333", "query_or_action": "get_transactions"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "+15550104", "card_number": "5528", "query_or_action": "get_transactions"}<br/><br/>
                 <strong>Response:</strong> Statement history successfully loaded. Identifies transaction <strong>TXN_FRAUD_001</strong> ($2,500.00 at Electronics Depot) as <strong>flagged_suspicious: true</strong>.
               </div>
             </div>
@@ -1111,7 +1116,7 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "8765432109", "card_number": "3333", "query_or_action": "select_transaction", "transaction_id": "TXN_FRAUD_001"}<br/><br/>
+                <strong>Payload:</strong> {"account_number": "+15550104", "card_number": "5528", "query_or_action": "select_transaction", "transaction_id": "TXN_FRAUD_001"}<br/><br/>
                 <strong>Response:</strong> Fraud Suspicion confirmed. <strong>Probable Action:</strong> Ask customer if they authorized. If not, block card, file dispute, order replacement.
               </div>
             </div>
@@ -1130,7 +1135,7 @@ def generate_html_report(res, test_cases):
               <div class="chat-bubble chat-bubble-agent" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:var(--text);">"Could you please confirm if you authorized this $2,500.00 purchase at Electronics Depot?"</div>
             </div>
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Elena Rostova)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Emily Watson)</div>
               <div class="chat-bubble chat-bubble-user">"No, absolutely not! I have never heard of that store! That is fraud!"</div>
             </div>
             <div class="chat-row">
@@ -1140,13 +1145,13 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "8765432109", "card_number": "3333", "query_or_action": "confirm_fraud", "transaction_id": "TXN_FRAUD_001"}<br/><br/>
-                <strong>Response:</strong> Success! Elena's card status updated to <strong>Blocked</strong>, transaction disputed, replacement card ordered, and FRAUD_CONFIRMED_CARD_BLOCKED logged.
+                <strong>Payload:</strong> {"account_number": "+15550104", "card_number": "5528", "query_or_action": "confirm_fraud", "transaction_id": "TXN_FRAUD_001"}<br/><br/>
+                <strong>Response:</strong> Success! Emily Watson's card status updated to <strong>Blocked</strong>, transaction disputed, replacement card ordered, and FRAUD_CONFIRMED_CARD_BLOCKED logged.
               </div>
             </div>
             <div class="chat-row">
               <div class="chat-label chat-label-agent">🤖 CrewAI Voice Response to Customer</div>
-              <div class="chat-bubble chat-bubble-agent" style="background:rgba(209,18,38,0.1); border:1px solid rgba(209,18,38,0.25); color:#ff808b;">"Thank you for confirming. I have immediately blocked your card ending in 3333 to prevent any further charges. The $2,500.00 charge is now marked as disputed, and you will not be held responsible. A replacement card is on its way and will arrive in 3-5 business days."</div>
+              <div class="chat-bubble chat-bubble-agent" style="background:rgba(209,18,38,0.1); border:1px solid rgba(209,18,38,0.25); color:#ff808b;">"Thank you for confirming. I have immediately blocked your card ending in 5528 to prevent any further charges. The $2,500.00 charge is now marked as disputed, and you will not be held responsible. A replacement card is on its way and will arrive in 3-5 business days."</div>
             </div>
           </div>
         </div>
@@ -1164,7 +1169,7 @@ def generate_html_report(res, test_cases):
           </div>
           <div class="chat-container">
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Elena Rostova)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Emily Watson)</div>
               <div class="chat-bubble chat-bubble-user">"I received a text alert about a $2,500 charge on my credit card. Is it blocked?"</div>
             </div>
             <div class="chat-row">
@@ -1186,7 +1191,7 @@ def generate_html_report(res, test_cases):
               <div class="chat-bubble chat-bubble-agent" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:var(--text);">"I see a purchase for $2,500.00 at Electronics Depot which has been flagged as suspicious. Did you authorize this charge?"</div>
             </div>
             <div class="chat-row">
-              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Elena Rostova)</div>
+              <div class="chat-label chat-label-user">🗣️ Twilio IVR Customer (Emily Watson)</div>
               <div class="chat-bubble chat-bubble-user">"Oh yes, that was me! I bought a new editing computer today."</div>
             </div>
             <div class="chat-row">
@@ -1196,19 +1201,18 @@ def generate_html_report(res, test_cases):
             <div class="chat-row">
               <div class="chat-label chat-label-mcp">⚙️ MCP Gateway Call &amp; Core Banking Response</div>
               <div class="chat-bubble chat-bubble-mcp">
-                <strong>Payload:</strong> {"account_number": "8765432109", "card_number": "3333", "query_or_action": "deny_fraud", "transaction_id": "TXN_FRAUD_001"}<br/><br/>
-                <strong>Response:</strong> Success! Elena's transaction marked AUTHORIZED, flagged_suspicious set to false, card remains active, and SUSPICION_CLEARED_BY_CUSTOMER logged.
+                <strong>Payload:</strong> {"account_number": "+15550104", "card_number": "5528", "query_or_action": "deny_fraud", "transaction_id": "TXN_FRAUD_001"}<br/><br/>
+                <strong>Response:</strong> Success! Emily Watson's transaction marked AUTHORIZED, flagged_suspicious set to false, card remains active, and SUSPICION_CLEARED_BY_CUSTOMER logged.
               </div>
             </div>
             <div class="chat-row">
               <div class="chat-label chat-label-agent">🤖 CrewAI Voice Response to Customer</div>
-              <div class="chat-bubble chat-bubble-agent" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--green);">"Perfect! Thank you for confirming. I have marked the $2,500.00 purchase as authorized, and cleared the fraud alert. Your card ending in 3333 remains Active and fully ready for use!"</div>
+              <div class="chat-bubble chat-bubble-agent" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--green);">"Perfect! Thank you for confirming. I have marked the $2,500.00 purchase as authorized, and cleared the fraud alert. Your card ending in 5528 remains Active and fully ready for use!"</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+
 """)
 
     html_parts.append("""  <!-- SECTION 2: SEQUENCE DIAGRAMS -->
@@ -1221,6 +1225,7 @@ def generate_html_report(res, test_cases):
       <div class="diag-tab active" onclick="switchDiagramTab(event,'d-failed')">&#128201; Flow 1: Failed Transaction</div>
       <div class="diag-tab" onclick="switchDiagramTab(event,'d-blocked')">&#128274; Flow 2: Blocked Card</div>
       <div class="diag-tab" onclick="switchDiagramTab(event,'d-fraud')">&#128680; Flow 3: Fraud Suspicion</div>
+      
     </div>
 
     <!-- Tab 1: Failed Transaction Diagram -->
@@ -1255,6 +1260,8 @@ def generate_html_report(res, test_cases):
     html_parts.append(SVG_FLOW3)
     html_parts.append("""      </div>
     </div>
+
+    </div>
   </div>
 
   <!-- SECTION 3: POSTMAN TESTING -->
@@ -1273,12 +1280,13 @@ def generate_html_report(res, test_cases):
       <div class="tab" onclick="switchTab(event,'t-blocked')">&#128274; 2. Blocked Card</div>
       <div class="tab" onclick="switchTab(event,'t-fraud-yes')">&#128680; 3. Fraud Confirmed</div>
       <div class="tab" onclick="switchTab(event,'t-fraud-no')">&#10003; 4. Fraud Denied</div>
+      
     </div>
 
     <!-- Tab 1: Failed Transaction -->
     <div id="t-failed" class="tab-content active">
       <div class="step-heading"><span class="step-num">A</span>Fetch Transaction Statement</div>
-      <p class="step-desc">Retrieve Sarah Jenkins' transaction list and card status:</p>""")
+      <p class="step-desc">Retrieve Vedant' transaction list and card status:</p>""")
 
     html_parts.append(code_pair(res["flow1_stepA_req"], res["flow1_stepA_res"]))
 
@@ -1316,7 +1324,7 @@ def generate_html_report(res, test_cases):
     <!-- Tab 3: Fraud Confirmed -->
     <div id="t-fraud-yes" class="tab-content">
       <div class="step-heading"><span class="step-num">A</span>Fetch Transaction Statement</div>
-      <p class="step-desc">Query Elena Rostova's transactions to surface the suspicious charge:</p>""")
+      <p class="step-desc">Query Emily Watson's transactions to surface the suspicious charge:</p>""")
 
     html_parts.append(code_pair(res["flow3_stepA_req"], res["flow3_stepA_res"]))
 
@@ -1334,15 +1342,16 @@ def generate_html_report(res, test_cases):
 
     <!-- Tab 4: Fraud Denied -->
     <div id="t-fraud-no" class="tab-content">
-      <div class="step-heading"><span class="step-num">A</span>Fetch Transactions &mdash; Elena's account is resolved</div>
+      <div class="step-heading"><span class="step-num">A</span>Fetch Transactions &mdash; Emily Watson's account is resolved</div>
       <p class="step-desc">Deny fraud request was processed on the active transaction:</p>""")
 
     html_parts.append(code_pair(res["flow3_stepD_req"], res["flow3_stepD_res"], "var(--green)"))
 
     html_parts.append("""    </div>
+
   </div>
 
-  <!-- SECTION 4: API ACTION REFERENCE TABLE -->
+    <!-- SECTION 4: API ACTION REFERENCE TABLE -->
   <h2 class="section-title">API Action Reference</h2>
   <div class="api-section" style="overflow-x:auto;">
     <table>
@@ -1358,6 +1367,7 @@ def generate_html_report(res, test_cases):
         <tr><td style="font-family:monospace;color:var(--warn)">unblock_card</td><td style="color:var(--muted)">+ security_answer</td><td style="color:var(--muted)">Validates security answer; sets card Active, logs action</td><td>Flow 2</td></tr>
         <tr><td style="font-family:monospace;color:var(--red)">confirm_fraud</td><td style="color:var(--muted)">+ transaction_id</td><td style="color:var(--muted)">Blocks card, marks txn disputed, orders replacement, logs</td><td>Flow 3a</td></tr>
         <tr><td style="font-family:monospace;color:var(--green)">deny_fraud</td><td style="color:var(--muted)">+ transaction_id</td><td style="color:var(--muted)">Clears fraud flag, card stays Active, logs action</td><td>Flow 3b</td></tr>
+
       </tbody>
     </table>
   </div>
@@ -1484,7 +1494,7 @@ def generate_html_report(res, test_cases):
 </div>
 
 <footer>
-  <p>AIVA IVR Credit Card Integration Documentation &copy; 2026. Wells Fargo Demo Reference Only.</p>
+  <p>AIVA IVR Credit Card Integration Documentation &copy; 2026. NextGen Bank Credit Card Demo Reference Only.</p>
 </footer>
 <script>""")
     html_parts.append(JS)

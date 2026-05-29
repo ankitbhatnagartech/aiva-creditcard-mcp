@@ -13,8 +13,8 @@ import pymongo
 load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI")
-DB_NAME = os.getenv("MONGO_DB_NAME", "Veda_Rituals")
-COLLECTION_NAME = os.getenv("MONGO_COLLECTION_NAME", "wf-creditcards-ivr")
+DB_NAME = os.getenv("MONGO_DB_NAME", "wf-ivr")
+COLLECTION_NAME = os.getenv("MONGO_COLLECTION_NAME", "creditcards")
 
 SERVER_HOST = os.getenv("SERVER_HOST", "0.0.0.0")
 SERVER_PORT = int(os.getenv("SERVER_PORT", "8000"))
@@ -28,7 +28,7 @@ mcp = FastMCP("aiva-creditcard-mcp")
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Wells Fargo Credit Card IVR REST Gateway",
+    title="NextGen Bank Credit Card IVR REST Gateway",
     description="HTTP REST API proxy for the aiva-creditcard-mcp server to enable runtime testing via Postman.",
     version="1.0.0"
 )
@@ -45,7 +45,7 @@ def get_db_collection():
 
 # Pydantic schema for FastAPI
 class CreditCardRequest(BaseModel):
-    account_number: str = Field(..., description="Wells Fargo Account Number (10 digits)", example="9876543210")
+    account_number: str = Field(..., description="NextGen Bank Account Number (10 digits)", example="9876543210")
     card_number: str = Field(..., description="Last 4 digits of the card number", example="1111")
     query_or_action: str = Field(..., description="Action to perform: 'get_transactions', 'select_transaction', 'request_limit_increase', 'unblock_card', 'confirm_fraud', 'deny_fraud'", example="get_transactions")
     transaction_id: str = Field(None, description="Target transaction ID for disputes or limits", example="TXN_FAIL_001")
@@ -95,7 +95,7 @@ def execute_banking_logic(
         
         response_str = (
             f"==================================================\n"
-            f"       WELLS FARGO CREDIT CARD SYSTEM (AIVA)      \n"
+            f"       NEXTGEN BANK CREDIT CARD SYSTEM (AIVA)     \n"
             f"==================================================\n"
             f"Customer Name     : {customer_name}\n"
             f"Account Number    : {account_number}\n"
@@ -189,7 +189,7 @@ def execute_banking_logic(
         flagged = target_txn.get("flagged_suspicious", False)
         
         response_str = (
-            f"WELLS FARGO TRANSACTION INQUIRY REPORT\n"
+            f"NEXTGEN BANK TRANSACTION INQUIRY REPORT\n"
             f"----------------------------------\n"
             f"Transaction ID : {t_id}\n"
             f"Merchant       : {merchant}\n"
@@ -456,6 +456,8 @@ def execute_banking_logic(
             f"[SYSTEM_LOG] Fraud alert resolved by customer | Transaction ID: {transaction_id} marked as Authorized (Approved)"
         )
 
+
+
     else:
         return (
             f"Error: Unknown action '{query_or_action}'. Please select a valid credit card action.\n\n"
@@ -476,7 +478,7 @@ def handle_credit_card_flow(
     Blocked Cards, and Fraud Suspicion queries and updates.
 
     Parameters:
-    - account_number: Customer's Wells Fargo Account Number (e.g. '9876543210')
+    - account_number: Customer's NextGen Bank Account Number (e.g. '9876543210')
     - card_number: Credit card number ending digits or full number (e.g. '1111')
     - query_or_action: Action to perform:
       - 'get_transactions': Returns transactions history.

@@ -3,9 +3,9 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
 [![MCP](https://img.shields.io/badge/Model_Context_Protocol-Model-blue?style=for-the-badge)](https://modelcontextprotocol.io/)
-[![Wells Fargo](https://img.shields.io/badge/Wells_Fargo-D11226?style=for-the-badge&logo=wells-fargo&logoColor=F2A900)](https://www.wellsfargo.com/)
+[![NextGen Bank](https://img.shields.io/badge/NextGen_Bank-005571?style=for-the-badge&logo=bank)](https://modelcontextprotocol.io/)
 
-A decoupled, stateful Model Context Protocol (MCP) server and HTTP REST Gateway styled exactly as a **Banking Credit Card IVR Integration**. It bridges the gap between raw backend core banking mainframes and conversational voice AI frameworks (such as Twilio Voice, Whisper, ElevenLabs, and CrewAI).
+A decoupled, stateful Model Context Protocol (MCP) server and HTTP REST Gateway styled exactly as a **NextGen Bank Credit Card IVR Integration**. It bridges the gap between raw backend core banking mainframes and conversational voice AI frameworks (such as Twilio Voice, Whisper, ElevenLabs, and CrewAI).
 
 ---
 
@@ -40,29 +40,31 @@ We have designed and verified five industry-grade banking workflow and security 
 
 ## 📊 Isolated Demo Schema (3 Profiles)
 
-To deliver a non-contaminating, scalable and bulletproof live demonstration, the database seeds **three distinct customer accounts** formatted identically to real **Wells Fargo Account Numbers (10 digits)**. Each profile isolates exactly one business flow:
+To deliver a non-contaminating, scalable and bulletproof live demonstration, the database seeds **three distinct customer accounts** formatted identically to real **NextGen Bank Account Numbers (10 digits)**. Each profile isolates exactly one business flow:
 
 ```mermaid
 graph TD
-    A[MongoDB Database] --> B(wf-creditcards-ivr Collection)
+    A[MongoDB Database] --> B(nextgen-creditcards-ivr Collection)
     
     B --> C[Account 1: Failed Transaction]
-    C --> C1[Sarah Jenkins]
-    C --> C2[Account No: 9876543210]
-    C --> C3[Card ending in 1111]
+    C --> C1[Vedant]
+    C --> C2[Account No: 770321003]
+    C --> C3[Card ending in 7003]
     C --> C4[Flow: Limit decline -> temporary limit increase to $2,000]
     
     B --> D[Account 2: Card Blocked]
-    D --> D1[Michael Chen]
-    D --> D2[Account No: 5432109876]
-    D --> D3[Card ending in 2222]
+    D --> D1[Maria Gonzalez]
+    D --> D2[Account No: +15550102]
+    D --> D3[Card ending in 8121]
     D --> D4[Flow: KBA question 'Buddy' -> unblock to Active / 3-Strike Lockout]
     
     B --> E[Account 3: Fraud Suspicion]
-    E --> E1[Elena Rostova]
-    E --> E2[Account No: 8765432109]
-    E --> E3[Card ending in 3333]
+    E --> E1[Emily Watson]
+    E --> E2[Account No: +15550104]
+    E --> E3[Card ending in 5528]
     E --> E4[Flow: Confirm Fraud -> disputes txn, permanent hot-card block, Apple Pay digital wallet copy]
+
+
 ```
 
 ---
@@ -77,8 +79,8 @@ graph TD
 Create a `.env` file in the root directory to manage your configurations:
 ```env
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
-MONGO_DB_NAME=Veda_Rituals
-MONGO_COLLECTION_NAME=wf-creditcards-ivr
+MONGO_DB_NAME=wf-ivr
+MONGO_COLLECTION_NAME=creditcards
 SERVER_HOST=0.0.0.0
 SERVER_PORT=8000
 ```
@@ -99,10 +101,10 @@ Run the programmatic automation suite to completely reset the database, execute 
 python run_automated_tests.py
 ```
 This test runner executes:
-* Sarah Jenkins limit increase happy path & restricted card limit override block.
-* Michael Chen unblocking happy path & sequential 3-strike brute-force lockout.
-* Elena Rostova fraud disputes, duplicate disputes block, and unblocking compromised card blocks.
-* Elena Rostova fraud denial clearing & non-flagged fraud clearing block.
+* Vedant limit increase happy path & restricted card limit override block.
+* Maria Gonzalez unblocking happy path & sequential 3-strike brute-force lockout.
+* Emily Watson fraud disputes, duplicate disputes block, and unblocking compromised card blocks.
+* Emily Watson fraud denial clearing & non-flagged fraud clearing block.
 
 ### 2. Start HTTP Gateway (Postman Testing)
 Start the FastAPI REST gateway to test using Postman or manual HTTP POST payloads:
@@ -138,6 +140,6 @@ Configure your CrewAI orchestrator or desktop client using this block:
 
 * **`server.py`**: Houses the dual FastMCP stdio server and FastAPI REST gateway.
 * **`run_automated_tests.py`**: Executes the 18 automated test suites, capturing live JSON traces to compile the master documentation.
-* **`seed_db.py`**: Seeds MongoDB with Wells Fargo test profiles.
+* **`seed_db.py`**: Seeds MongoDB with NextGen Bank test profiles.
 * **`integration_docs.html`**: Handover reference with pixel-clean fullscreen sequence diagram modals, conversational chats, and live REST JSON traces.
 * **`.gitignore`**: Excludes credentials (`.env`) and python compilation directories from Git tracking.

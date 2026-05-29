@@ -9,8 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI")
-DB_NAME = os.getenv("MONGO_DB_NAME", "Veda_Rituals")
-COLLECTION_NAME = os.getenv("MONGO_COLLECTION_NAME", "wf-creditcards-ivr")
+DB_NAME = os.getenv("MONGO_DB_NAME", "wf-ivr")
+COLLECTION_NAME = os.getenv("MONGO_COLLECTION_NAME", "creditcards")
 
 if not MONGO_URI:
     print("ERROR: MONGO_URI environment variable not set in .env file.", file=sys.stderr)
@@ -38,28 +38,28 @@ def seed_database():
     print(f"Dropping existing collection '{COLLECTION_NAME}' if it exists...")
     collection.drop()
     
-    # 1. Failed Transaction Flow (Sarah Jenkins)
-    # Account: 10-digit Wells Fargo account number: 9876543210
-    # Card ending in 1111
+    # 1. Failed Transaction Flow (Vedant)
+    # Account/phone: 770321003
+    # Card ending in 7003
     account_1 = {
-        "account_number": "9876543210",
-        "customer_name": "Sarah Jenkins",
-        "phone_number": "+14155551111",
+        "account_number": "770321003",
+        "customer_name": "Vedant",
+        "phone_number": "770321003",
         "card_details": {
-            "card_number_full": "4111-2222-3333-1111",
-            "card_number_masked": "1111",
+            "card_number_full": "4111-2222-3333-7003",
+            "card_number_masked": "7003",
             "status": "Active",
-            "credit_limit": 1000.00,
-            "daily_spent": 900.00,
-            "available_balance": 100.00,
-            "expiry_date": "10/29",
+            "credit_limit": 14000.00,
+            "daily_spent": 12440.00,
+            "available_balance": 1560.00,
+            "expiry_date": "08/28",
             "security_question": "What was the name of your first pet?",
             "security_answer": "Buddy"
         },
         "transactions": [
             {
                 "transaction_id": "TXN_FAIL_001",
-                "amount": 300.00,
+                "amount": 3000.00,
                 "merchant": "Luxury Watches Inc",
                 "date": get_iso_date(days_offset=0, hours_offset=1),
                 "status": "Failed",
@@ -70,7 +70,7 @@ def seed_database():
                 "auth_code": None
             },
             {
-                "transaction_id": "TXN_SARAH_001",
+                "transaction_id": "TXN_VEDANT_001",
                 "amount": 900.00,
                 "merchant": "Best Buy Stores",
                 "date": get_iso_date(days_offset=0, hours_offset=4),
@@ -82,7 +82,7 @@ def seed_database():
                 "auth_code": "AU_984710"
             },
             {
-                "transaction_id": "TXN_SARAH_002",
+                "transaction_id": "TXN_VEDANT_002",
                 "amount": 42.50,
                 "merchant": "Starbucks Coffee",
                 "date": get_iso_date(days_offset=1),
@@ -94,7 +94,7 @@ def seed_database():
                 "auth_code": "AU_128394"
             },
             {
-                "transaction_id": "TXN_SARAH_003",
+                "transaction_id": "TXN_VEDANT_003",
                 "amount": 120.00,
                 "merchant": "Target Stores",
                 "date": get_iso_date(days_offset=2),
@@ -109,27 +109,27 @@ def seed_database():
         "action_logs": []
     }
 
-    # 2. Blocked Card Flow (Michael Chen)
-    # Account: 10-digit Wells Fargo account number: 5432109876
-    # Card ending in 2222
+    # 2. Blocked Card Flow (Maria Gonzalez)
+    # Account/phone: +15550102
+    # Card ending in 8121
     account_2 = {
-        "account_number": "5432109876",
-        "customer_name": "Michael Chen",
-        "phone_number": "+14155552222",
+        "account_number": "+15550102",
+        "customer_name": "Maria Gonzalez",
+        "phone_number": "+15550102",
         "card_details": {
-            "card_number_full": "4111-2222-3333-2222",
-            "card_number_masked": "2222",
+            "card_number_full": "4111-2222-3333-8121",
+            "card_number_masked": "8121",
             "status": "Blocked",
-            "credit_limit": 5000.00,
-            "daily_spent": 150.00,
-            "available_balance": 4850.00,
+            "credit_limit": 6000.00,
+            "daily_spent": 980.00,
+            "available_balance": 5020.00,
             "expiry_date": "04/28",
             "security_question": "What was the name of your first pet?",
             "security_answer": "Buddy"
         },
         "transactions": [
             {
-                "transaction_id": "TXN_MIKE_001",
+                "transaction_id": "TXN_MARIA_001",
                 "amount": 150.00,
                 "merchant": "Chevron Gas Station",
                 "date": get_iso_date(days_offset=1),
@@ -141,7 +141,7 @@ def seed_database():
                 "auth_code": "AU_837194"
             },
             {
-                "transaction_id": "TXN_MIKE_002",
+                "transaction_id": "TXN_MARIA_002",
                 "amount": 25.40,
                 "merchant": "Whole Foods Market",
                 "date": get_iso_date(days_offset=2),
@@ -156,20 +156,20 @@ def seed_database():
         "action_logs": []
     }
 
-    # 3. Fraud Suspicion Flow (Elena Rostova)
-    # Account: 10-digit Wells Fargo account number: 8765432109
-    # Card ending in 3333
+    # 3. Fraud Suspicion Flow (Emily Watson)
+    # Account/phone: +15550104
+    # Card ending in 5528
     account_3 = {
-        "account_number": "8765432109",
-        "customer_name": "Elena Rostova",
-        "phone_number": "+14155553333",
+        "account_number": "+15550104",
+        "customer_name": "Emily Watson",
+        "phone_number": "+15550104",
         "card_details": {
-            "card_number_full": "4111-2222-3333-3333",
-            "card_number_masked": "3333",
+            "card_number_full": "4111-2222-3333-5528",
+            "card_number_masked": "5528",
             "status": "Active",
-            "credit_limit": 15000.00,
-            "daily_spent": 2500.00,
-            "available_balance": 12500.00,
+            "credit_limit": 1200.00,
+            "daily_spent": 1130.00,
+            "available_balance": 70.00,
             "expiry_date": "12/28",
             "security_question": "What was the name of your first pet?",
             "security_answer": "Buddy"
@@ -188,7 +188,7 @@ def seed_database():
                 "auth_code": "AU_738192"
             },
             {
-                "transaction_id": "TXN_ELENA_001",
+                "transaction_id": "TXN_EMILY_001",
                 "amount": 45.00,
                 "merchant": "Uber Trips",
                 "date": get_iso_date(days_offset=1),
@@ -200,7 +200,7 @@ def seed_database():
                 "auth_code": "AU_481029"
             },
             {
-                "transaction_id": "TXN_ELENA_002",
+                "transaction_id": "TXN_EMILY_002",
                 "amount": 89.20,
                 "merchant": "Amazon.com",
                 "date": get_iso_date(days_offset=3),
